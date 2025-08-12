@@ -30,14 +30,15 @@ SHOW TABLES; # Zeige alle Tabellen in der aktuellen Datenbank an
 -- Struktur anzeigen
 DESCRIBE Kunde; # Zeige die Struktur der Tabelle Kunde an
 
--- Datensätze einfügen
+-- Datensätze einfügen / pw immer hashen
 INSERT INTO Kunde (K_name, K_alter, k_mail, K_pw) 
-VALUES ('Max Mustermann', 30 , "Mmustermann@muster.de", 'doof'),
-('Erika Musterfrau', 25 , "Emusterfrau@muster.de", "tetanus"),
-('Hans Müller', 40 , "EMüller.de",'bier' ),
-('Hans Müller', 42 , "HMüller.de",'eistee'); 
+VALUES ('Max Mustermann', 30 , "Mmustermann@muster.de", SHA2('doof', 256)),
+('Erika Musterfrau', 25 , "Emusterfrau@muster.de", SHA2('tetanus', 256)),
+('Hans Mueller', 40 , "EMueller.de",SHA2('bier', 256)),
+('Hans Mueller', 42 , "HMueller.de",SHA2('eistee', 256)); 
 # Füge mehrere Datensätze in die Tabelle Kunde ein
 
 -- Tabellen daten anzeigen
+
 
 SELECT * FROM Kunde; # Zeige alle Datensätze in der Tabelle Kunde an
