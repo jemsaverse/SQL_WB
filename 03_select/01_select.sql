@@ -20,16 +20,16 @@ CREATE TABLE IF NOT EXISTS boo.contacts (
     city VARCHAR(100)
 );
 
-DSCRIBE boo.contacts;
+DESCRIBE boo.contacts;
 
 
 -- 2. 50 Datensätze einfügen (id wird automatisch vergeben)
-INSERT INTO contacts (name, address, phone, email, age, state, city) VALUES
+INSERT INTO boo.contacts (name, address, phone, email, age, state, city) VALUES
 ('Sophia Müller', 'Musterstraße 1', '030/123456', 'sophia.mueller@example.de', 25, 'Berlin', 'Berlin'),
-('Ahmet Yılmaz', 'Hauptstraße 2', '0221/987654', 'ahmet.yilmaz@example.de', 32, 'Nordrhein-Westfalen', 'Köln'),
+('Ahmet Yilmaz', 'Hauptstraße 2', '0221/987654', 'ahmet.yilmaz@example.de', 32, 'Nordrhein-Westfalen', 'Köln'),
 ('Leonie Schmidt', 'Bahnhofstraße 3', '089/111222', 'leonie.schmidt@example.de', 28, 'Bayern', 'München'),
 ('Omar Al-Farouqi', 'Marktplatz 4', '040/222333', 'omar.alfarouqi@example.de', 35, 'Hamburg', 'Hamburg'),
-('Mehmet Kaya', 'Sonnenweg 5', '0711/333444', 'mehmet.kaya@example.de', 30, 'Baden-Württemberg', 'Stuttgart'),
+('Mehmet Kaya', 'Sonne nweg 5', '0711/333444', 'mehmet.kaya@example.de', 30, 'Baden-Württemberg', 'Stuttgart'),
 ('Fatima Al-Hassan', 'Gartenweg 6', '030/555666', 'fatima.alhassan@example.de', 27, 'Berlin', 'Berlin'),
 ('Noah Becker', 'Feldstraße 7', '0611/777888', 'noah.becker@example.de', 29, 'Hessen', 'Frankfurt'),
 ('Aylin Demir', 'Ringstraße 8', '0911/999000', 'aylin.demir@example.de', 24, 'Bayern', 'Nürnberg'),

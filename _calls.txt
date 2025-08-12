@@ -10,4 +10,4 @@ source 02_tables\03_tables.sql
 source 02_tables\04_tables.sql
 
 
-source 03_select\rdbms.sql
+source 03_select\01_select.sql
