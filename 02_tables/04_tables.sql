@@ -1,40 +1,43 @@
-\! cls
+#Grundlagen / Basics
 
--- DB anlegen
-SHOW DATABASES; 
+\! CLS
 
--- DB anlegen, falls noch nicht existent
-CREATE DATABASE IF NOT EXISTS boo;
-
--- DB wechseln
-USE boo;
+-- PW /Verschlüsselung
 
 
--- Tabelle löschen, falls existent
--- Nur bei Test / Entwicklung 
-DROP TABLE IF EXISTS Kunde; 
+SHOW DATABASES; # Zeige alle Datenbanken an
 
--- Tabellen anlegen
-CREATE TABLE IF NOT EXISTS Kunde 
-(
-k_id INT AUTO_INCREMENT PRIMARY KEY, 
-k_name VARCHAR (45),
-k_alter TINYINT 
-);
+CREATE DATABASE IF NOT EXISTS boo; # Erstelle die Datenbank boo
+-- NOT EXISTS verhindert, dass eine Fehlermeldung ausgegeben wird, wenn die Datenbank bereits existiert
 
 -- Tabellen anzeigen
-SHOW TABLES;
+USE boo; # Wechsle in die Datenbank boo
+
+-- Tabelle löschen
+DROP TABLE IF EXISTS Kunde; # Löscht die Tabelle Kunde, falls sie existiert
+-- Tabelle erstellen
+
+CREATE TABLE IF NOT EXISTS Kunde 
+(
+K_ID INT AUTO_INCREMENT PRIMARY KEY,
+K_name Varchar(50) NOT NULL,
+K_alter TINYINT,
+k_mail  Varchar(100) UNIQUE,
+K_pw Varchar(100)
+);
+SHOW TABLES; # Zeige alle Tabellen in der aktuellen Datenbank an
 
 -- Struktur anzeigen
-DESCRIBE Kunde;
+DESCRIBE Kunde; # Zeige die Struktur der Tabelle Kunde an
 
--- Datensätze / Zeilen
+-- Datensätze einfügen
+INSERT INTO Kunde (K_name, K_alter, k_mail, K_pw) 
+VALUES ('Max Mustermann', 30 , "Mmustermann@muster.de", 'doof'),
+('Erika Musterfrau', 25 , "Emusterfrau@muster.de", "tetanus"),
+('Hans Müller', 40 , "EMüller.de",'bier' ),
+('Hans Müller', 42 , "HMüller.de",'eistee'); 
+# Füge mehrere Datensätze in die Tabelle Kunde ein
 
-INSERT INTO Kunde (k_id, k_name, k_alter) VALUES (DEFAULT, "Meier", 28);
-INSERT INTO Kunde (k_id, k_name, k_alter) VALUES (DEFAULT, "Hussein", 32);
-INSERT INTO Kunde (k_id, k_name, k_alter) VALUES (DEFAULT, "Li", 26);
-INSERT INTO Kunde (k_id, k_name, k_alter) VALUES (DEFAULT, "Li", 40);
-INSERT INTO Kunde (k_id, k_name, k_alter) VALUES (DEFAULT, "Li", 61);
+-- Tabellen daten anzeigen
 
--- Tabellendaten anzeigen
-SELECT  * FROM Kunde;
+SELECT * FROM Kunde; # Zeige alle Datensätze in der Tabelle Kunde an
